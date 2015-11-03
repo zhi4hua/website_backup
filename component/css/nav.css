@@ -1,0 +1,18 @@
+/* nav 的层叠样式*/
+
+header {
+	margin: 0;
+	padding: 0;
+}
+
+header > ul {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	list-style: none;
+	float: right;
+}
+
+header > ul > li {
+	display: inline-block;
+}
