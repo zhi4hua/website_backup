@@ -51,13 +51,20 @@ header  ul  li {
 nav {
 	width:960px;
 	margin:37px auto 0px auto;
+	display: table;
+	/*border:1px dashed green;*/
+}
+
+nav ul {
+	display: table-row;
+	/*border:1px yellow dashed;*/
 }
 
 nav > ul > li{
-	/*border:1px gray dashed;*/
-	/*float: left;*/
-	display: inline-table;
 	text-align: center;
+	display: table-cell;
+	position: relative;
+	/*border:1px gray dashed;*/
 }
 
 nav li  span {
@@ -66,8 +73,41 @@ nav li  span {
 
 nav li > ul {
 	display: none;
+	position: absolute;
+	padding: 1.4em auto 0 0.5em;
 }
 
-#search {
-	/*margin: 10px 0 0 0;*/
+/* 鼠标经过显示二级导航栏 */
+nav li:hover > ul {
+	display: inherit;
+}
+
+nav li li {
+	/*float: left;*/
+	/*display: inline-block;*/
+	padding-top: 10px;
+}
+
+/* 搜索框 */
+#search-text {
+	border:none;
+	border-bottom: 1px solid;
+	border-bottom-color: inherit;
+	outline: none;
+	width: 40px;
+	/* 自动变长特效 */
+	transition:width 0.8s;
+	-moz-transition:width 0.8s; /* Firefox 4 */
+	-webkit-transition:width 0.8s; /* Safari and Chrome */
+	-o-transition:width 0.8s; /* Opera */
+}
+
+#search-text:hover, #search-text:focus {
+	width:160px;
+	color: black;
+}
+
+/* 让 input 标签添加发光效果,但仅可用于直接 CSS3 的浏览器*/
+input:focus {
+     box-shadow: 0 0 8px rgba(103, 166, 217, 1);
 }
